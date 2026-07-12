@@ -47,34 +47,34 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'ELECT4', nombre: 'Electivo Formación General', semestre: 6, requisitos: [] },
         
         // Año 4
-        { id: 'ODO403A', nombre: 'Clínica Integral del Niño I', semestre: 7, requisitos: [] },
-        { id: 'ODO405A', nombre: 'Clínica Integral del Adulto I', semestre: 7, requisitos: [] },
-        { id: 'ODO414A', nombre: 'Cirugía Bucal I', semestre: 7, requisitos: [] },
-        { id: 'ODO417A', nombre: 'Imaginología Diagnóstica II', semestre: 7, requisitos: [] },
+        { id: 'ODO418', nombre: 'Clínica Integral del Niño I', semestre: 7, requisitos: [] },
+        { id: 'ODO419', nombre: 'Clínica Integral del Adulto I', semestre: 7, requisitos: [] },
+        { id: 'ODO420', nombre: 'Cirugía Bucal I', semestre: 7, requisitos: [] },
+        { id: 'ODO421', nombre: 'Imaginología Diagnóstica II', semestre: 7, requisitos: [] },
         { id: 'ELECT5', nombre: 'Electivo Formación General', semestre: 7, requisitos: [] },
-        { id: 'ODO407A', nombre: 'Clínica Integral del Niño II', semestre: 8, requisitos: ['ODO403A'] },
-        { id: 'ODO409A', nombre: 'Clínica Integral del Adulto II', semestre: 8, requisitos: ['ODO405A'] },
-        { id: 'ODO416A', nombre: 'Cirugía Bucal II', semestre: 8, requisitos: ['ODO414A'] },
-        { id: 'ODO415A', nombre: 'Patología Bucal y Maxilofacial II', semestre: 8, requisitos: [] },
+        { id: 'ODO423', nombre: 'Clínica Integral del Niño II', semestre: 8, requisitos: ['ODO403A'] },
+        { id: 'ODO424', nombre: 'Clínica Integral del Adulto II', semestre: 8, requisitos: ['ODO405A'] },
+        { id: 'ODO425', nombre: 'Cirugía Bucal II', semestre: 8, requisitos: ['ODO414A'] },
+        { id: 'ODO422', nombre: 'Patología Bucal y Maxilofacial II', semestre: 8, requisitos: [] },
         { id: 'ELECT6', nombre: 'Electivo Formación General', semestre: 8, requisitos: [] },
 
         // Año 5
-        { id: 'ODO502A', nombre: 'Clínica Integral del Niño III', semestre: 9, requisitos: ['ODO407A'] },
-        { id: 'ODO510A', nombre: 'Clínica Integral del Adulto III', semestre: 9, requisitos: ['ODO409A'] },
-        { id: 'ODO509A', nombre: 'Cirugía Bucal III', semestre: 9, requisitos: ['ODO416A'] },
-        { id: 'ODO514A', nombre: 'Odontología Geriátrica I', semestre: 9, requisitos: ['ODO409A', 'ODO416A'] },
-        { id: 'ODO601A', nombre: 'Odontología Legal', semestre: 9, requisitos: [] },
-        { id: 'ODO505A', nombre: 'Clínica Integral del Niño IV', semestre: 10, requisitos: ['ODO502A'] },
-        { id: 'ODO507A', nombre: 'Clínica Integral de Adulto IV', semestre: 10, requisitos: ['ODO510A'] },
-        { id: 'ODO512A', nombre: 'Cirugía Bucal IV', semestre: 10, requisitos: ['ODO509A'] },
-        { id: 'ODO516A', nombre: 'Odontología Geriátrica II', semestre: 10, requisitos: ['ODO514A'] },
-        { id: 'ODO604A', nombre: 'Administración y Gestión en Salud', semestre: 10, requisitos: [] },
+        { id: 'ODO518', nombre: 'Clínica Integral del Niño III', semestre: 9, requisitos: ['ODO407A'] },
+        { id: 'ODO519', nombre: 'Clínica Integral del Adulto III', semestre: 9, requisitos: ['ODO409A'] },
+        { id: 'ODO520', nombre: 'Cirugía Bucal III', semestre: 9, requisitos: ['ODO416A'] },
+        { id: 'ODO521', nombre: 'Odontología Geriátrica I', semestre: 9, requisitos: ['ODO409A', 'ODO416A'] },
+        { id: 'ODO522', nombre: 'Odontología Legal', semestre: 9, requisitos: [] },
+        { id: 'ODO525', nombre: 'Clínica Integral del Niño IV', semestre: 10, requisitos: ['ODO502A'] },
+        { id: 'ODO523', nombre: 'Clínica Integral de Adulto IV', semestre: 10, requisitos: ['ODO510A'] },
+        { id: 'ODO524', nombre: 'Cirugía Bucal IV', semestre: 10, requisitos: ['ODO509A'] },
+        { id: 'ODO526', nombre: 'Odontología Geriátrica II', semestre: 10, requisitos: ['ODO514A'] },
+        { id: 'ODO527', nombre: 'Administración y Gestión en Salud', semestre: 10, requisitos: [] },
         
         // Año 6
-        { id: 'INTERN', nombre: 'Internado', semestre: 11, requisitos: [] }, // Requisitos complejos, se dejan abiertos
-        { id: 'CUIDAD', nombre: 'Cuidados Especiales en Odontología', semestre: 12, requisitos: [] },
-        { id: 'CLINAV', nombre: 'Clínica Práctica Avanzada', semestre: 12, requisitos: [] },
-        { id: 'OPTAPRO', nombre: 'Optativo de Profundización', semestre: 12, requisitos: [] },
+        { id: 'ODO619', nombre: 'Internado', semestre: 11, requisitos: [] }, // Requisitos complejos, se dejan abiertos
+        { id: 'ODO620', nombre: 'Cuidados Especiales en Odontología', semestre: 12, requisitos: [] },
+        { id: 'ODO621', nombre: 'Clínica Práctica Avanzada', semestre: 12, requisitos: [] },
+        { id: 'ODO330X', nombre: 'Optativo de Profundización', semestre: 12, requisitos: [] },
     ];
     
     const mallaContainer = document.getElementById('malla-container');
