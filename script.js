@@ -118,7 +118,18 @@ document.addEventListener('DOMContentLoaded', () => {
         mallaContainer.appendChild(mallaGrid);
     }
 
-    // Función para manejar el clic en un ramo
+    // NUEVA FUNCIÓN AGREGADA AQUÍ: Elimina en cadena los ramos dependientes
+    function eliminarDependientes(ramoId) {
+        const dependientes = ramos_data.filter(ramo => ramo.requisitos.includes(ramoId));
+        dependientes.forEach(dep => {
+            if (aprobados.includes(dep.id)) {
+                aprobados = aprobados.filter(id => id !== dep.id);
+                eliminarDependientes(dep.id); // Borrado en cadena recursivo
+            }
+        });
+    }
+
+    // Función para manejar el clic en un ramo (MODIFICADA)
     function manejarClickRamo(ramo) {
         const { id, requisitos } = ramo;
         const yaAprobado = aprobados.includes(id);
@@ -126,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (yaAprobado) {
             // Permitir "des-aprobar" un ramo
             aprobados = aprobados.filter(ramoId => ramoId !== id);
+            eliminarDependientes(id); // <--- Llama a la limpieza en cadena
         } else {
             // Verificar si los requisitos están cumplidos
             const requisitosFaltantes = verificarRequisitos(requisitos);
@@ -147,12 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarVisualizacion();
     }
 
-    // Verifica si todos los requisitos de un ramo están en la lista de aprobados
+    // Verifica si todos los requisitos de un ramo están en la lista de aprobados (MODIFICADA)
     function verificarRequisitos(requisitos) {
+        if (!requisitos || requisitos.length === 0) return [];
         return requisitos.filter(req => !aprobados.includes(req));
     }
 
-    // Actualiza las clases CSS de todos los ramos según su estado
+    // Actualiza las clases CSS de todos los ramos según su estado (MODIFICADA)
     function actualizarVisualizacion() {
         const todosLosRamos = document.querySelectorAll('.ramo');
         todosLosRamos.forEach(ramoDiv => {
@@ -182,12 +195,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function mostrarNotificacion(mensaje) {
         notificacion.innerText = mensaje;
         notificacion.style.display = 'block';
-        setTimeout(() => {
+        if (window.notifTimeout) clearTimeout(window.notifTimeout);
+        window.notifTimeout = setTimeout(() => {
             notificacion.style.display = 'none';
         }, 3000); // La notificación desaparece después de 3 segundos
     }
 
     // --- INICIALIZACIÓN ---
+    generarMalla();
+    actualizarVisualizacion();
+});
     generarMalla();
     actualizarVisualizacion();
 });
