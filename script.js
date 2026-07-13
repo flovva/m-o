@@ -412,9 +412,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-    generarMalla();
-
-    actualizarVisualizacion();
-
-}); 
-
